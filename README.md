@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dylan Girard - NASA Image of the Day App
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+This app is a simple, intuitive tool to view NASA's spectacular Astronomy Picture of the Day archive, which features various images of the cosmos. It uses the NASA Astronomy Picture of the Day API, and allows viewing of not only the current image of the day, but navigation to view the archive of images dating all the way back to 2015! If you love space and star gazing, you'll love this app!
 
-### `npm start`
+The design of the app involves the use of modern software engineering technologies such as React and React Router for streamlined performance. Enjoy!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wire Frames
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
 
-### `npm run build`
+**Minimum Viable Product Goals**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a user, I want to be greeted with today's NASA Astronomy Picture of the Day, because I love space and star gazing.
+- As a user, I want to easily navigate to previous images from the home screen with a single button, because I shouldn't have to work too hard to see a few great pictures if I don't have much time to look.
+- As a user, I want to see a brief description of the image I'm looking at, so that I can learn more about astronomy.
+- As a user I want to have easy, intuitive access to the awesome archive of images going all the way back to 2015, because it's cool to look back at older images too.
+- As a user, I want overall navigation of this app to be simple and straight forward, because I don't want to have to think too much about seeing the images that I love.
+- As a user, I want this app to work quickly and smoothly, because I'm used to using fantastic apps in my every day life.
+- As a user, I want to be able to search by day, month, and year, because I'm picky about seeing certain cosmic patterns that only happened during specific time periods.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Stretch Goals**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- As a user, it would be nice to have the ability to switch between light and dark modes, because bright screens sometimes hurt my eyes.
+- As a user, it would be cool to be able to search for images by subject, incase I'm interested in a very specific type of phenomenon.
+- As a user I would live to be able to like/share the images I enjoy the most, because I'm interested in the social aspects of star gazing.
