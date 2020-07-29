@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import DailyImage from './DailyImage'
 import './App.css';
 
 class App extends Component {
-	// componentDidMount() {
-	// 	const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}`;
-	// 	console.log(url);
-	// }
 
 	constructor(props) {
 		super(props);
@@ -22,6 +19,7 @@ class App extends Component {
 	render() {
 		return <div>
 			<Header />
+			<DailyImage setImage={this.setImage} dailyImage={this.state.image}/>
 		</div>;
 	}
 }

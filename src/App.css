@@ -33,7 +33,10 @@
 }
 
 .mini-banner {
-	font-size: 10px;
+	font-size: 12px;
 	grid-column: 2 / 4;
-	
+}
+
+.daily-image {
+	width: 375px;
 }
