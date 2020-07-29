@@ -21,22 +21,47 @@
 }
 
 .nasa-logo-1 {
+	position: relative;
+	top: 9px;
 	width: 100px;
 }
 
 .nasa-NASA {
+	position: relative;
+	top: 22px;
 	width: 200px;
 }
 
 .nav-links {
+	position: relative;
+	text-align: right;
+	right: 14px;
+	top: 10px;
 	display: block;
+	color: black;
 }
 
 .mini-banner {
-	font-size: 12px;
+	position: relative;
+	bottom: 4px;
+	font-size: 13px;
 	grid-column: 2 / 4;
+}
+
+.daily-info {
+	color: white;
+	text-align: center;
 }
 
 .daily-image {
 	width: 375px;
+}
+
+.explanation {
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+.next-page-link {
+	color: white;
 }

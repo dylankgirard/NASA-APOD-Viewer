@@ -8,18 +8,18 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			image: null,
+			data: {},
 		};
 	}
 
-	setImage = (image) => {
-		this.setState({ image: image });
+	setData = (data) => {
+		this.setState({ data: data });
 	};
 
 	render() {
 		return <div>
 			<Header />
-			<DailyImage setImage={this.setImage} dailyImage={this.state.image}/>
+			<DailyImage setData={this.setData} dailyData={this.state.data}/>
 		</div>;
 	}
 }
