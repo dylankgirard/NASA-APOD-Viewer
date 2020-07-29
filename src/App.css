@@ -1,3 +1,39 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
 	background-color: black;
+	font-family: 'Titillium Web', sans-serif;
+  }
+}
+
+.header {
+	display: grid;
+	background-color: white;
+	height: 100px;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 3fr 1fr;
+}
+
+.nasa-logo-1 {
+	width: 100px;
+}
+
+.nasa-NASA {
+	width: 200px;
+}
+
+.nav-links {
+	display: block;
+}
+
+.mini-banner {
+	font-size: 10px;
+	grid-column: 2 / 4;
+	
 }
