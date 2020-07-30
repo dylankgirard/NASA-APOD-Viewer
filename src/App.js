@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import Header from './Header'
-import DailyImage from './DailyImage'
+import Header from './Header';
+import DailyImage from './DailyImage';
 import './App.css';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			data: {},
+			currentDate: null,
+		};
+	}
 	componentDidMount() {
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}`;
 
@@ -11,19 +18,12 @@ class App extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let newData = response;
-				console.log(newData);
+				console.log(url);
 				this.setData(newData);
 			})
 			.catch((err) => {
 				console.error(err);
 			});
-	}
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: {},
-		};
 	}
 
 	setData = (data) => {
@@ -34,7 +34,7 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<DailyImage dailyData={this.state.data} />
+				<DailyImage dailyData={this.state.data} setData={this.setData} />
 			</div>
 		);
 	}
