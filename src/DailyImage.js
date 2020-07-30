@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import ReactPlayer from 'react-player';
 // May need this in case of API breakdown
 // import { altData } from './data';
-
 
 class DailyImage extends Component {
 	handlePreviousDayClick = () => {
@@ -10,11 +9,7 @@ class DailyImage extends Component {
 		console.log(today);
 
 		let yesterday =
-			today.year() +
-			'-' +
-			(today.month() + 1) +
-			'-' +
-			(today.date() - 1);
+			today.year() + '-' + (today.month() + 1) + '-' + (today.date() - 1);
 
 		console.log(yesterday);
 		this.props.setCurrentDate(today.subtract(1, 'days'));
@@ -36,12 +31,15 @@ class DailyImage extends Component {
 	};
 
 	render() {
-		let data = this.props.dailyData;
-
+		const data = this.props.dailyData;
+		const isImage = data.media_type === 'image'
 		return (
 			<div className='daily-info'>
 				<h1 className='daily-banner'>Image of the Day</h1>
-				<img className='daily-image' src={data.url} alt=''></img>
+				{
+					isImage ? <img className='daily-image' src={data.url} alt=''></img> :
+					<ReactPlayer className='daily-video' url={data.url} /> 	
+				}
 				<h1 className='daily-banner'>{data.title}</h1>
 				<p className='copyright'>{data.copyright}</p>
 				<h3 className='date'>{data.date}</h3>
