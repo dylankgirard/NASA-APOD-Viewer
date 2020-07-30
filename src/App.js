@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import Header from './Header';
 import DailyImage from './DailyImage';
 import './App.css';
+import moment from 'moment';
+
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			data: {},
-			currentDate: null,
+			currentDate: moment(),
 		};
 	}
 	componentDidMount() {
@@ -30,11 +32,15 @@ class App extends Component {
 		this.setState({ data: data });
 	};
 
+	setCurrentDate = (currentDate) => {
+		this.setState({currentDate: currentDate})
+	}
+
 	render() {
 		return (
 			<div>
 				<Header />
-				<DailyImage dailyData={this.state.data} setData={this.setData} />
+				<DailyImage dailyData={this.state.data} setData={this.setData} currentDate={this.state.currentDate} setCurrentDate={this.setCurrentDate}/>
 			</div>
 		);
 	}

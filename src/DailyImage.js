@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 // May need this in case of API breakdown
-import { altData } from './data';
-console.log(altData);
+// import { altData } from './data';
+
 
 class DailyImage extends Component {
 	handlePreviousDayClick = () => {
-		let today = new Date();
-		let yesterday =
-			today.getFullYear() +
-			'-' +
-			(today.getMonth() + 1) +
-			'-' +
-			(today.getDate() - 1);
-		console.log(yesterday);
+		let today = this.props.currentDate;
+		console.log(today);
 
-		let url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
+		let yesterday =
+			today.year() +
+			'-' +
+			(today.month() + 1) +
+			'-' +
+			(today.date() - 1);
+
+		console.log(yesterday);
+		this.props.setCurrentDate(today.subtract(1, 'days'));
+
+		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
 
 		fetch(url)
 			.then((response) => response.json())
