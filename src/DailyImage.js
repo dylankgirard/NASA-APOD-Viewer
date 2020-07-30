@@ -21,7 +21,7 @@ class DailyImage extends Component {
 			.then((response) => {
 				let previousData = response;
 				console.log(url);
-				
+
 				this.props.setData(previousData);
 				console.log(this.props.dailyData);
 			})
