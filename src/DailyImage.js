@@ -60,6 +60,18 @@ class DailyImage extends Component {
 		return (
 			<div className='daily-info'>
 				<h1 className='daily-banner'>Image of the Day</h1>
+				<div>
+					<button
+						className='front-page-button'
+						onClick={this.handlePreviousDayClick}>
+						Previous Day
+					</button>
+					<button
+						className='front-page-button'
+						onClick={this.handleNextDayClick}>
+						Next Day
+					</button>
+				</div>
 				{isImage ? (
 					<img className='daily-image' src={data.url} alt=''></img>
 				) : (
@@ -69,14 +81,6 @@ class DailyImage extends Component {
 				<p className='copyright'>{data.copyright}</p>
 				<h3 className='date'>{data.date}</h3>
 				<p className='explanation'>{data.explanation}</p>
-				<button
-					className='front-page-button'
-					onClick={this.handlePreviousDayClick}>
-					Previous Day
-				</button>
-				<button className='front-page-button' onClick={this.handleNextDayClick}>
-					Next Day
-				</button>
 			</div>
 		);
 	}
