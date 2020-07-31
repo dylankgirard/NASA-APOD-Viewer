@@ -43,6 +43,7 @@ body {
 	right: 14px;
 	top: 10px;
 	display: block;
+	
 	color: black;
 }
 
@@ -72,6 +73,12 @@ body {
 	padding-right: 14px;
 }
 
-.next-page-link {
+.next-page-button {
 	color: black;
+	cursor: pointer;
+	padding: 5px;
+	margin: 10px;
+	
+	
+
 }

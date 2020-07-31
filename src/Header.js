@@ -14,7 +14,7 @@ class Header extends Component {
 					alt=''></img>
 				<div>
 					<Link to='' className='nav-links'>
-						Archive
+						Search
 					</Link>
 					<Link to='' className='nav-links'>
 						About
