@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
+import moment from 'moment';
 // May need this in case of API breakdown
 // import { altData } from './data';
 
@@ -19,7 +20,7 @@ class DailyImage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				// console.log(url);
+				console.log(url);
 
 				this.props.setData(previousData);
 				// console.log(this.props.dailyData);
@@ -33,18 +34,33 @@ class DailyImage extends Component {
 		let today = this.props.currentDate;
 		// console.log(today);
 
-		this.props.setCurrentDate(today.add(1, 'days'));
+		let url = null;
 
-		let tomorrow = today.format('YYYY-MM-DD');
-		console.log(tomorrow);
+		if (today.date() === moment().date()) {
+			let storedToday = today.format('YYYY-MM-DD');
+			// console.log(today.format('YYYY-MM-DD'));
+			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${storedToday}`;
+		} else {
+			this.props.setCurrentDate(today.add(1, 'days'));
 
-		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
+			let tomorrow = today.format('YYYY-MM-DD');
+			console.log(tomorrow);
+
+			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
+		}
+
+		// this.props.setCurrentDate(today.add(1, 'days'));
+
+		// let tomorrow = today.format('YYYY-MM-DD');
+		// console.log(tomorrow);
+
+		// const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				// console.log(url);
+				console.log(url);
 
 				this.props.setData(previousData);
 				// console.log(this.props.dailyData);

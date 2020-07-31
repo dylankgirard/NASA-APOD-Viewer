@@ -141,6 +141,7 @@ body {
 	.front-page-button {
 		color: black;
 		cursor: pointer;
+		width: 120px;
 		padding: 5px;
 		margin: 10px;
 	}
