@@ -73,12 +73,9 @@ body {
 	padding-right: 14px;
 }
 
-.next-page-button {
+.front-page-button {
 	color: black;
 	cursor: pointer;
 	padding: 5px;
 	margin: 10px;
-	
-	
-
 }

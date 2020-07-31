@@ -6,10 +6,9 @@ import ReactPlayer from 'react-player';
 class DailyImage extends Component {
 	handlePreviousDayClick = () => {
 		let today = this.props.currentDate;
-		console.log(today);
+		// console.log(today);
 
-		let yesterday =
-			today.year() + '-' + (today.month() + 1) + '-' + (today.date() - 1);
+		let yesterday = today.format('YYYY-MM-DD');
 
 		console.log(yesterday);
 		this.props.setCurrentDate(today.subtract(1, 'days'));
@@ -20,10 +19,10 @@ class DailyImage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				console.log(url);
+				// console.log(url);
 
 				this.props.setData(previousData);
-				console.log(this.props.dailyData);
+				// console.log(this.props.dailyData);
 			})
 			.catch((err) => {
 				console.error(err);
@@ -32,24 +31,23 @@ class DailyImage extends Component {
 
 	handleNextDayClick = () => {
 		let today = this.props.currentDate;
-		console.log(today);
+		// console.log(today);
 
-		let yesterday =
-			today.year() + '-' + (today.month() + 1) + '-' + (today.date() - 1);
+		let tomorrow = today.format('YYYY-MM-DD');
 
-		console.log(yesterday);
+		console.log(tomorrow);
 		this.props.setCurrentDate(today.add(1, 'days'));
 
-		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
+		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				console.log(url);
+				// console.log(url);
 
 				this.props.setData(previousData);
-				console.log(this.props.dailyData);
+				// console.log(this.props.dailyData);
 			})
 			.catch((err) => {
 				console.error(err);
@@ -72,11 +70,11 @@ class DailyImage extends Component {
 				<h3 className='date'>{data.date}</h3>
 				<p className='explanation'>{data.explanation}</p>
 				<button
-					className='next-page-button'
+					className='front-page-button'
 					onClick={this.handlePreviousDayClick}>
 					Previous Day
 				</button>
-				<button className='next-page-button' onClick={this.handleNextDayClick}>
+				<button className='front-page-button' onClick={this.handleNextDayClick}>
 					Next Day
 				</button>
 			</div>
