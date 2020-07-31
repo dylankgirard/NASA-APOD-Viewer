@@ -8,10 +8,10 @@ class DailyImage extends Component {
 		let today = this.props.currentDate;
 		// console.log(today);
 
-		let yesterday = today.format('YYYY-MM-DD');
-
-		console.log(yesterday);
 		this.props.setCurrentDate(today.subtract(1, 'days'));
+
+		let yesterday = today.format('YYYY-MM-DD');
+		console.log(yesterday);
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
 
@@ -33,10 +33,10 @@ class DailyImage extends Component {
 		let today = this.props.currentDate;
 		// console.log(today);
 
-		let tomorrow = today.format('YYYY-MM-DD');
-
-		console.log(tomorrow);
 		this.props.setCurrentDate(today.add(1, 'days'));
+
+		let tomorrow = today.format('YYYY-MM-DD');
+		console.log(tomorrow);
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 
