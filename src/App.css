@@ -8,6 +8,7 @@
 body {
 	background-color: black;
 	font-family: 'Titillium Web', sans-serif;
+	color: white;
 }
 
 .header {
@@ -42,7 +43,7 @@ body {
 
 .mini-banner {
 	position: relative;
-	bottom: 4px;
+	bottom: 8px;
 	font-size: 13px;
 	grid-column: 2 / 4;
 }
@@ -71,6 +72,7 @@ body {
 .front-page-button {
 	color: black;
 	cursor: pointer;
+	width: 120px;
 	padding: 5px;
 	margin: 10px;
 }
@@ -113,7 +115,7 @@ body {
 
 	.mini-banner {
 		position: relative;
-		bottom: 4px;
+		bottom: 8px;
 		font-size: 13px;
 		grid-column: 2 / 4;
 	}
@@ -136,13 +138,5 @@ body {
 		padding-left: 20px;
 		padding-right: 20px;
 		margin-bottom: 20px;
-	}
-
-	.front-page-button {
-		color: black;
-		cursor: pointer;
-		width: 120px;
-		padding: 5px;
-		margin: 10px;
 	}
 }

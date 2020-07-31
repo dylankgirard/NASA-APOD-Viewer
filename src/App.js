@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Header from './Header';
 import DailyImage from './DailyImage';
+import SearchPage from './SearchPage';
 import './App.css';
 import moment from 'moment';
+// import { Route } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props) {
@@ -41,11 +44,26 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<DailyImage
-					dailyData={this.state.data}
-					setData={this.setData}
-					currentDate={this.state.currentDate}
-					setCurrentDate={this.setCurrentDate}
+				<Route
+					path='/'
+					exact
+					render={() => {
+						return (
+							<DailyImage
+								dailyData={this.state.data}
+								setData={this.setData}
+								currentDate={this.state.currentDate}
+								setCurrentDate={this.setCurrentDate}
+							/>
+						);
+					}}
+				/>
+				<Route
+					path='/search-page'
+					exact
+					render={() => {
+						return <SearchPage />;
+					}}
 				/>
 			</div>
 		);
