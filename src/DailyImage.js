@@ -49,13 +49,6 @@ class DailyImage extends Component {
 			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 		}
 
-		// this.props.setCurrentDate(today.add(1, 'days'));
-
-		// let tomorrow = today.format('YYYY-MM-DD');
-		// console.log(tomorrow);
-
-		// const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
-
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {

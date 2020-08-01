@@ -18,7 +18,7 @@ class App extends Component {
 	componentDidMount() {
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${
 			process.env.REACT_APP_NASA_APOD_KEY
-		}&date=${moment().format('YYYY-MM-DD')}`;
+		}&date=${this.state.currentDate.format('YYYY-MM-DD')}`;
 
 		fetch(url)
 			.then((response) => response.json())
@@ -62,7 +62,14 @@ class App extends Component {
 					path='/search-page'
 					exact
 					render={() => {
-						return <SearchPage />;
+						return (
+							<SearchPage
+								dailyData={this.state.data}
+								setData={this.setData}
+								currentDate={this.state.currentDate}
+								setCurrentDate={this.setCurrentDate}
+							/>
+						);
 					}}
 				/>
 			</div>
