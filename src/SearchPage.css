@@ -7,13 +7,21 @@
 
 body {
 	background-color: black;
-    font-family: 'Titillium Web', sans-serif;
-    text-align: center;
+	font-family: 'Titillium Web', sans-serif;
+	text-align: center;
 }
 
 .search-input {
-    width: 40px;
-    text-align: center;
+	width: 50px;
+	margin: 5px;
+	text-align: center;
+}
+
+.search-button {
+	cursor: pointer;
+	width: 120px;
+	padding: 5px;
+	margin: 10px;
 }
 
 .search-page-logo {

@@ -16,7 +16,7 @@ class SearchPage extends Component {
 		};
 	}
 
-	// Redirect strat suggested here: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a DOESN'T WORK PROPERLY
+	// Redirect strat suggested here: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a 
 
 	setRedirect = () => {
 		this.setState({
@@ -32,7 +32,7 @@ class SearchPage extends Component {
 
 	handleChange = (event) => {
 		this.setState({ [event.target.id]: event.target.value });
-		console.log({ [event.target.id]: event.target.value });
+		// console.log({ [event.target.id]: event.target.value });
 	};
 
 	handleSubmit = (event) => {
@@ -40,7 +40,7 @@ class SearchPage extends Component {
 		this.props.setCurrentDate(
 			moment()
 				.year(this.state.year)
-				.month(this.state.month)
+				.month(this.state.month - 1)
 				.date(this.state.day)
 		);
 
@@ -52,12 +52,15 @@ class SearchPage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let newData = response;
-				console.log(url);
+				// console.log(url);
 				this.props.setData(newData);
 			})
 			.catch((err) => {
 				console.error(err);
 			});
+
+		this.setRedirect();
+		// console.log(this.props.currentDate);
 	};
 
 	render() {
@@ -97,14 +100,11 @@ class SearchPage extends Component {
 							value={this.state.year}
 							onChange={this.handleChange}></input>
 					</div>
-					{/* {this.renderRedirect()} */}
+					{this.renderRedirect()}
 					<button
 						className='search-button'
 						// type='submit'
-						onClick={() => {
-							this.props.setCurrentDate();
-							// this.setRedirect();
-						}}>
+						onClick={() => {}}>
 						See Results
 					</button>
 				</form>
@@ -113,11 +113,4 @@ class SearchPage extends Component {
 	}
 }
 
-// onClick={() => history.push('/')}
-// onClick={() => {
-//   greeting();
-//   waveHello();
-// this.handleRouteChange();
-// let history = useHistory();
-// useHistory.push('/');
 export default SearchPage;
