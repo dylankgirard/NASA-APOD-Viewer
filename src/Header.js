@@ -12,6 +12,7 @@ class Header extends Component {
 						src={require('./project-images/nasa-image-white-bg.jpg')}
 						alt=''
 					/>
+					{/* fetch for current day url */}
 				</Link>
 				<img
 					className='nasa-NASA'

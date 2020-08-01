@@ -44,6 +44,7 @@ body {
 
 .mini-banner {
 	position: relative;
+	text-align: left;
 	bottom: 8px;
 	font-size: 13px;
 	grid-column: 2 / 4;
