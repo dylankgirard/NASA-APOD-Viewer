@@ -5,6 +5,7 @@ import DailyImage from './DailyImage';
 import SearchPage from './SearchPage';
 import './App.css';
 import moment from 'moment';
+import AboutPage from './AboutPage';
 // import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -70,6 +71,13 @@ class App extends Component {
 								setCurrentDate={this.setCurrentDate}
 							/>
 						);
+					}}
+				/>
+				<Route
+					path='/about-page'
+					exact
+					render={() => {
+						return <AboutPage />;
 					}}
 				/>
 			</div>

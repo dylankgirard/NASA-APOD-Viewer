@@ -87,7 +87,7 @@ class SearchPage extends Component {
 					className='search-page-logo'
 					src={require('./project-images/retro-nasa-logo-black-bg.jpg')}
 					alt=''></img>
-				<p>Search for an image between 2015-Present</p>
+				<p>Search for an image between June 20th, 1995 and Present-Day</p>
 				<form className='search-form' onSubmit={this.handleSubmit}>
 					<div className='search-inputs'>
 						<input
