@@ -119,7 +119,7 @@ class SearchPage extends Component {
 					</div>
 					{this.renderRedirect()}
 					<button className='search-button'>View Entry</button>
-					{this.state.showBanner && <p>Not A Valid Date</p>}
+					{this.state.showBanner && <p className='not-valid'>Not A Valid Date</p>}
 				</form>
 			</div>
 		);

@@ -4,9 +4,8 @@ import moment from 'moment';
 // import SearchPage from './SearchPage';
 
 class Header extends Component {
-
 	goToPresentDate = () => {
-		let today = moment()
+		let today = moment();
 		// console.log(today);
 
 		this.props.setCurrentDate(today);
@@ -28,19 +27,21 @@ class Header extends Component {
 			.catch((err) => {
 				console.error(err);
 			});
-	}
+	};
 
 	render() {
 		return (
 			<nav className='header'>
-				<Link to='/' onClick={this.goToPresentDate}>
-					<img
-						className='nasa-logo-1'
-						src={require('./project-images/nasa-image-white-bg.jpg')}
-						alt=''
-					/>
-					{/* fetch for current day url */}
-				</Link>
+				<div className='home-link'>
+					<Link to='/' onClick={this.goToPresentDate}>
+						<img
+							className='nasa-logo-1'
+							src={require('./project-images/nasa-image-white-bg.jpg')}
+							alt=''
+						/>
+						{/* fetch for current day url */}
+					</Link>
+				</div>
 				<img
 					className='nasa-NASA'
 					src={require('./project-images/nasa-NASA-white-bg.jpg')}
@@ -49,6 +50,7 @@ class Header extends Component {
 					<Link to='/search-page' className='nav-links'>
 						Search
 					</Link>
+					
 					<Link to='/about-page' className='nav-links'>
 						About
 					</Link>

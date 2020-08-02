@@ -25,10 +25,15 @@ p {
 }
 
 .search-input {
-	width: 60px;
-	height: 20px;
+	width: 70px;
+	height: 30px;
 	margin: 5px;
 	text-align: center;
+}
+
+.search-input::-webkit-inner-spin-button,
+.search-input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
 }
 
 .search-button {
@@ -38,10 +43,12 @@ p {
 	margin: 10px;
 }
 
-
+.not-valid {
+	font-size: 20px;
+}
 
 @media only screen and (max-width: 400px) {
 	.search-page-logo {
-		width: 200px;
+		width: 275px;
 	}
 }
