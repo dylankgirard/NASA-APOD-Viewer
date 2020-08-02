@@ -3,9 +3,9 @@ import { Route } from 'react-router-dom';
 import Header from './Header';
 import DailyImage from './DailyImage';
 import SearchPage from './SearchPage';
+import AboutPage from './AboutPage';
 import './App.css';
 import moment from 'moment';
-import AboutPage from './AboutPage';
 // import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -44,7 +44,12 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
+				<Header
+					dailyData={this.state.data}
+					setData={this.setData}
+					currentDate={this.state.currentDate}
+					setCurrentDate={this.setCurrentDate}
+				/>
 				<Route
 					path='/'
 					exact
