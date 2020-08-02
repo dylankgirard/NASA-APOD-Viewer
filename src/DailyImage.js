@@ -68,7 +68,7 @@ class DailyImage extends Component {
 		const isImage = data.media_type === 'image';
 		return (
 			<div className='daily-info'>
-				<h1 className='daily-banner'>Image of the Day</h1>
+				<h1 className='top-banner'>Image of the Day</h1>
 				<div>
 					<button
 						className='front-page-button'

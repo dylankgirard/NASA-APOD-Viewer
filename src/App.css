@@ -56,8 +56,21 @@ body {
 	margin: 0 auto;
 }
 
+.top-banner {
+	margin-top: 5px;
+}
+
 .daily-image {
 	width: 600px;
+}
+
+.daily-banner {
+	line-height: 37px;
+	margin: 5px 5px 0px 5px;
+}
+
+.copyright {
+	margin-top: 7px;
 }
 
 .daily-video {
@@ -68,7 +81,7 @@ body {
 .explanation {
 	max-width: 700px;
 	margin: 0 auto;
-	margin-bottom: 100px;
+	margin-bottom: 75px;
 }
 
 .front-page-button {
@@ -76,7 +89,11 @@ body {
 	cursor: pointer;
 	width: 120px;
 	padding: 5px;
-	margin: 10px;
+	margin: 10px 5px 15px 5px;
+}
+
+.date {
+	margin: 5px;
 }
 
 @media only screen and (max-width: 400px) {

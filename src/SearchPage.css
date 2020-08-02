@@ -11,8 +11,22 @@ body {
 	text-align: center;
 }
 
+.search-banner {
+	margin-top: 5px;
+}
+
+.search-page-logo {
+	width: 375px;
+	margin: 10px;
+}
+
+p {
+	margin: 0 5px 5px 5px;
+}
+
 .search-input {
-	width: 50px;
+	width: 60px;
+	height: 20px;
 	margin: 5px;
 	text-align: center;
 }
@@ -24,9 +38,7 @@ body {
 	margin: 10px;
 }
 
-.search-page-logo {
-	width: 375px;
-}
+
 
 @media only screen and (max-width: 400px) {
 	.search-page-logo {

@@ -84,12 +84,12 @@ class SearchPage extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Search By Date</h1>
+				<h1 className='search-banner'>Search By Date</h1>
 				<img
 					className='search-page-logo'
 					src={require('./project-images/retro-nasa-logo-black-bg.jpg')}
 					alt=''></img>
-				<p>Search for an APOD image between June 20th, 1995 and Present-Day</p>
+				<p>Search for an APOD image between<br/>June 20th, 1995 and Present-Day</p>
 				<form className='search-form' onSubmit={this.handleSubmit}>
 					<div className='search-inputs'>
 						<input
