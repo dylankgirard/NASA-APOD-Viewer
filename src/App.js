@@ -44,12 +44,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Header
-					dailyData={this.state.data}
-					setData={this.setData}
-					currentDate={this.state.currentDate}
-					setCurrentDate={this.setCurrentDate}
-				/>
+				<Header setData={this.setData} setCurrentDate={this.setCurrentDate} />
 				<Route
 					path='/'
 					exact
