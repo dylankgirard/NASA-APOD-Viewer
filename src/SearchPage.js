@@ -30,9 +30,11 @@ class SearchPage extends Component {
 	};
 
 	dateValidator = () => {
+		if (moment(`${this.state.year}-${this.state.month}-${this.state.day}`).isBetween('1995-06-19', moment())){
 		return moment(
 			`${this.state.year}-${this.state.month}-${this.state.day}`
-		).isValid();
+		).isValid()
+		}
 		// console.log(
 		// 	moment(
 		// 		`${this.state.year}-${this.state.month}-${this.state.day}`
