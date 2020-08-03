@@ -38,9 +38,26 @@ p {
 
 .search-button {
 	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 5px;
 	width: 120px;
 	padding: 5px;
 	margin: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.search-button:hover {
+		background-color: rgb(249, 48, 48);
+		color: white;
+		transition: 0.25s;
+	}
+}
+
+.search-button:active {
+	background-color: white;
+	color: black;
+	transition: 0.3s;
 }
 
 .not-valid {

@@ -93,11 +93,29 @@ body {
 }
 
 .front-page-button {
+	font-family: 'Titillium Web', sans-serif;
 	color: black;
 	cursor: pointer;
+	outline: none;
+	border: none;
 	width: 120px;
 	padding: 5px;
+	border-radius: 5px;
 	margin: 10px 5px 20px 5px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.front-page-button:hover {
+		background-color: rgb(51, 48, 249);
+		color: white;
+		transition: 0.25s;
+	}
+}
+
+.front-page-button:active {
+	background-color: white;
+	color: black;
+	transition: 0.3s;
 }
 
 .date {
