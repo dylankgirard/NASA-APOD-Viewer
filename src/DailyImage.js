@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
+import './App.css'
 import moment from 'moment';
 // May need this in case of API breakdown
 // import { altData } from './data';
@@ -12,7 +13,7 @@ class DailyImage extends Component {
 		this.props.setCurrentDate(today.subtract(1, 'days'));
 
 		let yesterday = today.format('YYYY-MM-DD');
-		console.log(yesterday);
+		// console.log(yesterday);
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
 
@@ -20,7 +21,7 @@ class DailyImage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				console.log(url);
+				// console.log(url);
 
 				this.props.setData(previousData);
 				// console.log(this.props.dailyData);
@@ -44,7 +45,7 @@ class DailyImage extends Component {
 			this.props.setCurrentDate(today.add(1, 'days'));
 
 			let tomorrow = today.format('YYYY-MM-DD');
-			console.log(tomorrow);
+			// console.log(tomorrow);
 
 			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 		}
@@ -53,7 +54,7 @@ class DailyImage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				console.log(url);
+				// console.log(url);
 
 				this.props.setData(previousData);
 				// console.log(this.props.dailyData);
@@ -68,7 +69,7 @@ class DailyImage extends Component {
 		const isImage = data.media_type === 'image';
 		return (
 			<div className='daily-info'>
-				<h1 className='top-banner'>Image of the Day</h1>
+				<h1 className='top-banner'>Today's APOD Image</h1>
 				<div>
 					<button
 						className='front-page-button'

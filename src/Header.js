@@ -11,7 +11,7 @@ class Header extends Component {
 		this.props.setCurrentDate(today);
 
 		let formattedToday = today.format('YYYY-MM-DD');
-		console.log(formattedToday);
+		// console.log(formattedToday);
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${formattedToday}`;
 
@@ -19,7 +19,7 @@ class Header extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let data = response;
-				console.log(url);
+				// console.log(url);
 
 				this.props.setData(data);
 				// console.log(this.props.dailyData);
