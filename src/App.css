@@ -135,7 +135,7 @@ body {
 @media only screen and (max-width: 600px) {
 	body {
 		background-color: black;
-		font-family: 'Titillium Web', sans-serif;
+		font-family: 'Titillium Web', Helvetica, sans-serif;
 	}
 
 	.header {
