@@ -8,13 +8,22 @@ class DailyImage extends Component {
 		let today = this.props.currentDate;
 		// console.log(today);
 
-		this.props.setCurrentDate(today.subtract(1, 'days'));
+		let url = null;
 
-		let yesterday = today.format('YYYY-MM-DD');
-		// console.log(yesterday);
+		if (
+			today.format('YYYY-MM-DD') === moment('1995-06-20').format('YYYY-MM-DD')
+		) {
+			let storedDate = moment('1995-06-20').format('YYYY-MM-DD');
 
-		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
+			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${storedDate}`;
+		} else {
+			this.props.setCurrentDate(today.subtract(1, 'days'));
 
+			let yesterday = today.format('YYYY-MM-DD');
+			// console.log(yesterday);
+
+			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
+		}
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -35,8 +44,8 @@ class DailyImage extends Component {
 		let url = null;
 
 		if (today.date() === moment().date()) {
-			let storedToday = today.format('YYYY-MM-DD');
-			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${storedToday}`;
+			let storedDate = today.format('YYYY-MM-DD');
+			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${storedDate}`;
 		} else {
 			this.props.setCurrentDate(today.add(1, 'days'));
 

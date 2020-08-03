@@ -55,7 +55,7 @@ class SearchPage extends Component {
 					.month(this.state.month - 1)
 					.date(this.state.day)
 			);
-
+				
 			let searchDate = `${this.state.year}-${this.state.month}-${this.state.day}`;
 
 			const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${searchDate}`;
