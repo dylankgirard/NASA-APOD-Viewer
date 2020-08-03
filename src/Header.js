@@ -46,6 +46,9 @@ class Header extends Component {
 					src={require('./project-images/nasa-NASA-white-bg.jpg')}
 					alt=''></img>
 				<div className='nav-link-div'>
+					<Link to='/' className='nav-links' onClick={this.goToPresentDate}>
+						Home
+					</Link>
 					<Link to='/search-page' className='nav-links'>
 						Search
 					</Link>
