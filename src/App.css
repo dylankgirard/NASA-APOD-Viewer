@@ -91,7 +91,7 @@ body {
 }
 
 .front-page-button {
-	font-family: 'Titillium Web', sans-serif;
+	font-family: 'Titillium Web', Helvetica, sans-serif;
 	color: black;
 	cursor: pointer;
 	outline: none;
