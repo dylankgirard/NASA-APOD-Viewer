@@ -16,7 +16,7 @@ body {
 	background-color: white;
 	color: black;
 	height: 100px;
-	grid-template-columns: 35% 45% 20%;
+	grid-template-columns: 25% 45% 20%;
 	grid-template-rows: 3fr 1fr;
 }
 
@@ -32,13 +32,16 @@ body {
 
 .nasa-NASA {
 	position: relative;
-	top: 22px;
-	width: 200px;
+	top: 16px;
+	width: 230px;
+}
+
+.nav-link-div {
+	/* text-align: left; */
 }
 
 .nav-links {
 	position: relative;
-	text-align: right;
 	right: 14px;
 	top: 10px;
 	display: inline-block;
@@ -49,7 +52,8 @@ body {
 .mini-banner {
 	position: relative;
 	text-align: left;
-	bottom: 8px;
+	right: 4px;
+	bottom: 9px;
 	font-size: 13px;
 	grid-column: 2 / 4;
 }
@@ -100,7 +104,7 @@ body {
 	margin: 5px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
 	body {
 		background-color: black;
 		font-family: 'Titillium Web', sans-serif;
