@@ -33,8 +33,25 @@ body {
 
 .about-anchor {
     color: white;
-    padding: 5px;
+	padding: 5px;
+	border-radius: 5px;
 }
+
+@media (hover: hover) and (pointer: fine) {
+	.about-anchor:hover {
+		background-color: rgb(51, 48, 249);
+		color: white;
+		transition: 0.25s;
+	}
+}
+
+.about-anchor:active {
+	background-color: white;
+	color: black;
+	transition: 0.3s;
+}
+
+
 
 @media only screen and (max-width: 400px) {
 	.about-page-logo {

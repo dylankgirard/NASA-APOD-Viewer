@@ -32,12 +32,8 @@ body {
 
 .nasa-NASA {
 	position: relative;
-	top: 16px;
-	width: 230px;
-}
-
-.nav-link-div {
-	/* text-align: left; */
+	top: 13px;
+	width: 240px;
 }
 
 .nav-links {
@@ -46,6 +42,8 @@ body {
 	top: 10px;
 	display: inline-block;
 	padding: 5px;
+	border-radius: 5px;
+	text-decoration: none;
 	color: black;
 }
 
@@ -110,10 +108,22 @@ body {
 		color: white;
 		transition: 0.25s;
 	}
+
+	.nav-links:hover {
+		background-color: rgb(249, 48, 48);
+		color: white;
+		transition: 0.25s;
+	}
 }
 
 .front-page-button:active {
 	background-color: white;
+	color: black;
+	transition: 0.3s;
+}
+
+.nav-links:active {
+	background-color: rgb(109, 200, 233);
 	color: black;
 	transition: 0.3s;
 }
@@ -144,13 +154,13 @@ body {
 
 	.nasa-NASA {
 		position: relative;
-		top: 22px;
-		width: 200px;
+		top: 20px;
+		width: 210px;
 	}
 
 	.nav-links {
 		position: relative;
-		text-align: right;
+		text-align: center;
 		right: 10px;
 		top: 6px;
 		padding: 0;
@@ -183,5 +193,16 @@ body {
 		padding-left: 20px;
 		padding-right: 20px;
 		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.nav-links {
+		position: relative;
+		text-align: center;
+		left: 15px;
+		font-size: 12px;
+		height: 20px;
+		width: 45px;
 	}
 }
