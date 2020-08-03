@@ -6,7 +6,6 @@ import SearchPage from './SearchPage';
 import AboutPage from './AboutPage';
 import './App.css';
 import moment from 'moment';
-// import { Route } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props) {
@@ -25,7 +24,6 @@ class App extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let newData = response;
-				// console.log(url);
 				this.setData(newData);
 			})
 			.catch((err) => {

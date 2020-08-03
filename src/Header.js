@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-// import SearchPage from './SearchPage';
 
 class Header extends Component {
 	goToPresentDate = () => {
 		let today = moment();
-		// console.log(today);
 
 		this.props.setCurrentDate(today);
 
 		let formattedToday = today.format('YYYY-MM-DD');
-		// console.log(formattedToday);
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${formattedToday}`;
 
@@ -19,10 +16,7 @@ class Header extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let data = response;
-				// console.log(url);
-
 				this.props.setData(data);
-				// console.log(this.props.dailyData);
 			})
 			.catch((err) => {
 				console.error(err);

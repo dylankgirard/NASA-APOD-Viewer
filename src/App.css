@@ -9,6 +9,7 @@ body {
 	background-color: black;
 	font-family: 'Titillium Web', Helvetica, sans-serif;
 	color: white;
+	text-align: center;
 }
 
 .header {
@@ -57,7 +58,7 @@ body {
 }
 
 .daily-info {
-	color: white;
+	
 	text-align: center;
 	margin: 0 auto;
 }
@@ -67,7 +68,8 @@ body {
 }
 
 .daily-image {
-	width: 600px;
+	width: 100%;
+	max-width: 600px;
 }
 
 .daily-banner {
@@ -91,8 +93,9 @@ body {
 }
 
 .front-page-button {
-	font-family: 'Titillium Web', Helvetica, sans-serif;
+	font-family: 'Titillium Web', Arial, sans-serif;
 	color: black;
+	background-color: white;
 	cursor: pointer;
 	outline: none;
 	border: none;
@@ -102,18 +105,16 @@ body {
 	margin: 10px 5px 20px 5px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-	.front-page-button:hover {
-		background-color: rgb(51, 48, 249);
-		color: white;
-		transition: 0.25s;
-	}
+.front-page-button:hover {
+	background-color: rgb(51, 48, 249);
+	color: white;
+	transition: 0.25s;
+}
 
-	.nav-links:hover {
-		background-color: rgb(249, 48, 48);
-		color: white;
-		transition: 0.25s;
-	}
+.nav-links:hover {
+	background-color: rgb(249, 48, 48);
+	color: white;
+	transition: 0.25s;
 }
 
 .front-page-button:active {
@@ -133,34 +134,16 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-	body {
-		background-color: black;
-		font-family: 'Titillium Web', Helvetica, sans-serif;
-	}
-
 	.header {
-		display: grid;
-		background-color: white;
-		height: 100px;
 		grid-template-columns: 1fr 2fr 1fr;
-		grid-template-rows: 3fr 1fr;
-	}
-
-	.nasa-logo-1 {
-		position: relative;
-		top: 9px;
-		width: 100px;
 	}
 
 	.nasa-NASA {
-		position: relative;
 		top: 20px;
 		width: 210px;
 	}
 
 	.nav-links {
-		position: relative;
-		text-align: center;
 		right: 10px;
 		top: 6px;
 		padding: 0;
@@ -169,15 +152,7 @@ body {
 	}
 
 	.mini-banner {
-		position: relative;
 		bottom: 8px;
-		font-size: 13px;
-		grid-column: 2 / 4;
-	}
-
-	.daily-info {
-		color: white;
-		text-align: center;
 	}
 
 	.daily-image {

@@ -15,7 +15,7 @@ class SearchPage extends Component {
 		};
 	}
 
-	// Redirect strat suggested here: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a
+	// Redirect strategy suggested here: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a
 
 	setRedirect = () => {
 		this.setState({
@@ -30,22 +30,19 @@ class SearchPage extends Component {
 	};
 
 	dateValidator = () => {
-		if (moment(`${this.state.year}-${this.state.month}-${this.state.day}`).isBetween('1995-06-19', moment())){
-		return moment(
-			`${this.state.year}-${this.state.month}-${this.state.day}`
-		).isValid()
+		if (
+			moment(
+				`${this.state.year}-${this.state.month}-${this.state.day}`
+			).isBetween('1995-06-19', moment())
+		) {
+			return moment(
+				`${this.state.year}-${this.state.month}-${this.state.day}`
+			).isValid();
 		}
-		// console.log(
-		// 	moment(
-		// 		`${this.state.year}-${this.state.month}-${this.state.day}`
-		// 	).isValid()
-		// );
-		// console.log(this.state.valid);
 	};
 
 	handleChange = (event) => {
 		this.setState({ [event.target.id]: event.target.value });
-		// console.log({ [event.target.id]: event.target.value });
 	};
 
 	handleSubmit = (event) => {
@@ -67,7 +64,6 @@ class SearchPage extends Component {
 				.then((response) => response.json())
 				.then((response) => {
 					let newData = response;
-					// console.log(url);
 					this.props.setData(newData);
 				})
 				.catch((err) => {
@@ -75,7 +71,6 @@ class SearchPage extends Component {
 				});
 
 			this.setRedirect();
-			// console.log(this.props.currentDate);
 		} else {
 			this.setState({ showBanner: true, month: '', day: '', year: '' });
 		}
@@ -89,7 +84,11 @@ class SearchPage extends Component {
 					className='search-page-logo'
 					src={require('./project-images/retro-nasa-logo-black-bg.jpg')}
 					alt=''></img>
-				<p>Search for an APOD image between<br/>June 20th, 1995 and Present-Day</p>
+				<p>
+					Search for an APOD image between
+					<br />
+					June 20th, 1995 and Present-Day
+				</p>
 				<form className='search-form' onSubmit={this.handleSubmit}>
 					<div className='search-inputs'>
 						<input
@@ -119,7 +118,9 @@ class SearchPage extends Component {
 					</div>
 					{this.renderRedirect()}
 					<button className='search-button'>View Entry</button>
-					{this.state.showBanner && <p className='not-valid'>Not A Valid Date</p>}
+					{this.state.showBanner && (
+						<p className='not-valid'>Not A Valid Date</p>
+					)}
 				</form>
 			</div>
 		);

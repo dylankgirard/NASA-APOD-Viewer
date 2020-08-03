@@ -1,16 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
-
-* {
-	padding: 0;
-	margin: 0;
-}
-
-body {
-	background-color: black;
-	font-family: 'Titillium Web', Helvetica, sans-serif;
-	text-align: center;
-}
-
 .about-banner {
 	padding-top: 10px;
 }
