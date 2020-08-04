@@ -6,7 +6,6 @@ import moment from 'moment';
 class DailyImage extends Component {
 	handlePreviousDayClick = () => {
 		let today = this.props.currentDate;
-		// console.log(today);
 
 		let url = null;
 
@@ -20,7 +19,6 @@ class DailyImage extends Component {
 			this.props.setCurrentDate(today.subtract(1, 'days'));
 
 			let yesterday = today.format('YYYY-MM-DD');
-			// console.log(yesterday);
 
 			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${yesterday}`;
 		}
@@ -28,10 +26,8 @@ class DailyImage extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				let previousData = response;
-				// console.log(url);
 
 				this.props.setData(previousData);
-				// console.log(this.props.dailyData);
 			})
 			.catch((err) => {
 				console.error(err);

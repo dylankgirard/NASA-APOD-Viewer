@@ -25,7 +25,7 @@ The design of the app involves the use of technologies such as React, React Rout
 - As a user, I want to be greeted with today's NASA Astronomy Picture of the Day, because I love space and star gazing.
 - As a user, I want to easily navigate to previous images from the home screen because I shouldn't have to work too hard to see a few great space pictures.
 - As a user, I want to see a brief description of the image I'm looking at so that I can learn more about astronomy.
-- As a user, I want overall navigation of this app to be simple and straight-forward because I don't want to have to think too much about seeing the images that I love.
+- As a user, I want overall navigation of this app to be simple and straight-forward because I don't want to have to think too much when using the app.
 
 **Stretch Goals**
 
