@@ -81,7 +81,7 @@ class DailyImage extends Component {
 					</button>
 				</div>
 				{isImage ? (
-					<img className='daily-image' src={data.url} alt=''></img>
+					<img className='daily-image' src={data.url} alt='Daily'></img>
 				) : (
 					<ReactPlayer className='daily-video' url={data.url} />
 				)}

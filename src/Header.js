@@ -31,14 +31,14 @@ class Header extends Component {
 						<img
 							className='nasa-logo-1'
 							src={require('./project-images/nasa-image-white-bg.jpg')}
-							alt=''
+							alt='Modern NASA Logo'
 						/>
 					</Link>
 				</div>
 				<img
 					className='nasa-NASA'
 					src={require('./project-images/nasa-NASA-white-bg.jpg')}
-					alt=''></img>
+					alt='NASA Worm Logo'></img>
 				<div className='nav-link-div'>
 					<Link to='/' className='nav-links' onClick={this.goToPresentDate}>
 						Home

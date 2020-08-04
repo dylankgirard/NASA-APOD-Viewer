@@ -83,7 +83,7 @@ class SearchPage extends Component {
 				<img
 					className='search-page-logo'
 					src={require('./project-images/retro-nasa-logo-black-bg.jpg')}
-					alt=''></img>
+					alt='Retro NASA Logo'></img>
 				<p>
 					Search for an APOD image between
 					<br />

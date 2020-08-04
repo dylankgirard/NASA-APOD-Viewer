@@ -9,11 +9,11 @@ class AboutPage extends Component {
 				<img
 					className='about-page-logo'
 					src={require('./project-images/nasa-old-school.jpg')}
-					alt='old-school NASA logo'></img>
+					alt='Old-school NASA logo'></img>
 				<p className='about-info'>
-					This application was created by Dylan Girard in celebration of space exploration and
-					humanity's continuous journey to go beyond the boundaries of our
-					world.
+					This application was created by Dylan Girard in celebration of space
+					exploration and humanity's continuous journey to go beyond the
+					boundaries of our world.
 				</p>
 				<p className='about-info'>
 					The app itself runs using ReactJS, and utilizes NASA's Astronomy
