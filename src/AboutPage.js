@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './AboutPage.css';
 
+// Hou comment: As a follow-up challenge, how would you refactor AboutPage to use a functional component + Hooks? In general, how would you refactor your class components that don't rely state to use functional components?
 class AboutPage extends Component {
 	render() {
 		return (
-			<div>
+			// Hou comment: you can use a React fragment <></> here instead of creating an unnecessary div tag: https://reactjs.org/docs/fragments.html
+			<>
 				<h1 className='about-banner'>About This App</h1>
 				<img
 					className='about-page-logo'
@@ -36,7 +38,7 @@ class AboutPage extends Component {
 						GitHub
 					</a>
 				</div>
-			</div>
+			</>
 		);
 	}
 }

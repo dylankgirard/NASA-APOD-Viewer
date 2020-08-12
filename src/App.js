@@ -8,6 +8,8 @@ import './App.css';
 import moment from 'moment';
 
 class App extends Component {
+	// Hou comment: No need to pass props into your constructor() and super() since
+	// you're not accessing this.props inside the constructor()
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -40,8 +42,14 @@ class App extends Component {
 	};
 
 	render() {
+		// Hou comment: you could use destructuring to extract your state into variables, so you don't have to access them repeatedly in this.state
+		// const {
+		// 	data,
+		// 	currentDate,
+		// } = this.state;
 		return (
-			<div>
+			// Hou comment: <main> is more semantic than <div>
+			<main>
 				<Header setData={this.setData} setCurrentDate={this.setCurrentDate} />
 				<Route
 					path='/'
@@ -74,11 +82,13 @@ class App extends Component {
 				<Route
 					path='/about-page'
 					exact
+					// Hou comment: since we are not passing props to AboutPage, which prop can we use instead
+					// of render=?
 					render={() => {
 						return <AboutPage />;
 					}}
 				/>
-			</div>
+			</main>
 		);
 	}
 }
