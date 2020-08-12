@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import './App.css';
 import moment from 'moment';
 
+// Hou comment: during office hours, we already discussed a few refactorings you could do to this component - feel free to DM me to review your code again when you're done implementing the changes we discussed!
 class DailyImage extends Component {
 	handlePreviousDayClick = () => {
 		let today = this.props.currentDate;
@@ -50,6 +51,8 @@ class DailyImage extends Component {
 			url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${tomorrow}`;
 		}
 
+		// Hou comment: as a follow up challenge, read about the async/await pattern and try to refactor
+		// your fetch call to use that pattern: https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -63,6 +66,15 @@ class DailyImage extends Component {
 	};
 
 	render() {
+		// Hou comment: you could use destructuring to extract your props into variables, so you don't have to access them repeatedly in data
+		// const {
+		// 	url,
+		// 	title,
+		// 	copyright,
+		// 	date,
+		// 	explanation
+		// } = this.props.dailyData;
+
 		const data = this.props.dailyData;
 		const isImage = data.media_type === 'image';
 		return (

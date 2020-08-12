@@ -4,6 +4,8 @@ import moment from 'moment';
 import { Redirect } from 'react-router-dom';
 
 class SearchPage extends Component {
+		// Hou comment: No need to pass props into your constructor() and super() since
+		// you're not accessing this.props inside the constructor()
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -29,15 +31,9 @@ class SearchPage extends Component {
 		}
 	};
 
-	dateValidator = () => {
-		if (
-			moment(
-				`${this.state.year}-${this.state.month}-${this.state.day}`
-			).isBetween('1995-06-19', moment())
-		) {
-			return moment(
-				`${this.state.year}-${this.state.month}-${this.state.day}`
-			).isValid();
+	dateValidator = (date) => {
+		if (moment(date).isBetween('1995-06-19', moment())) {
+			return moment(date).isValid();
 		}
 	};
 
@@ -47,24 +43,28 @@ class SearchPage extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		// Hou comment: you could use destructuring to extract your state into variables at the top of the function, so you don't have to access them repeatedly in this.state
+		// const {
+		// 	year,
+		// 	month,
+		// 	day
+		// } = this.state
 
-		if (this.dateValidator()) {
+		let searchDate = `${this.state.year}-${this.state.month}-${this.state.day}`;
+		if (this.dateValidator(searchDate)) {
 			this.props.setCurrentDate(
 				moment()
 					.year(this.state.year)
 					.month(this.state.month - 1)
 					.date(this.state.day)
-			);
-				
-			let searchDate = `${this.state.year}-${this.state.month}-${this.state.day}`;
+			);				
 
 			const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${searchDate}`;
 
 			fetch(url)
 				.then((response) => response.json())
 				.then((response) => {
-					let newData = response;
-					this.props.setData(newData);
+					this.props.setData(response);
 				})
 				.catch((err) => {
 					console.error(err);
@@ -77,8 +77,10 @@ class SearchPage extends Component {
 	};
 
 	render() {
+		// Hou comment: consider extracting the state variables by destructuring this.state
 		return (
-			<div>
+			// Hou comment: you can use a React fragment <></> here instead of creating an unnecessary div tag: https://reactjs.org/docs/fragments.html
+			<>
 				<h1 className='search-banner'>Search By Date</h1>
 				<img
 					className='search-page-logo'
@@ -122,7 +124,7 @@ class SearchPage extends Component {
 						<p className='not-valid'>Not A Valid Date</p>
 					)}
 				</form>
-			</div>
+			</>
 		);
 	}
 }

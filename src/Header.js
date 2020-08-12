@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
+// Hou comment: since Header does not rely on state, can we use a functional component instead?
 class Header extends Component {
 	goToPresentDate = () => {
 		let today = moment();
@@ -12,13 +13,15 @@ class Header extends Component {
 
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APOD_KEY}&date=${formattedToday}`;
 
+		// Hou comment: as a follow up challenge, read about the async/await pattern and try to refactor
+		// your fetch call to use that pattern: https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				let data = response;
-				this.props.setData(data);
+				this.props.setData(response);
 			})
 			.catch((err) => {
+				// Hou comment: consider displaying a useful error message to the user instead
 				console.error(err);
 			});
 	};
